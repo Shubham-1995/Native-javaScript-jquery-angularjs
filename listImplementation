@@ -8,22 +8,22 @@
 </head>
 <body>
 	<ul class="sagul">
-		<li>kalpana
+		<li>fruit
 			<ul class="listValue">
-				<li class="listItem">lavesh</li>
-				<li class="listItem">shubham</li>
+				<li class="listItem">apple</li>
+				<li class="listItem">banana</li>
 			</ul>
 		</li>
-		<li>harsh
+		<li>vegitable
 			<ul class="listValue">
-				<li class="listItem">anil</li>
-				<li class="listItem">rajendra</li>
+				<li class="listItem">potato</li>
+				<li class="listItem">tomato</li>
 			</ul>
 		</li>
-		<li>giraj
+		<li>language
 		<ul class="listValue">
-				<li class="listItem">paaji</li>
-				<li class="listItem">sardarji</li>
+				<li class="listItem">hindi</li>
+				<li class="listItem">english</li>
 			</ul>
 		</li>
 	</ul>
