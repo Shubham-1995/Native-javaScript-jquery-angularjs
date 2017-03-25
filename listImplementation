@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <link href="css/styleseet.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<ul class="sagul">
+		<li>kalpana
+			<ul class="listValue">
+				<li class="listItem">lavesh</li>
+				<li class="listItem">shubham</li>
+			</ul>
+		</li>
+		<li>harsh
+			<ul class="listValue">
+				<li class="listItem">anil</li>
+				<li class="listItem">rajendra</li>
+			</ul>
+		</li>
+		<li>giraj
+		<ul class="listValue">
+				<li class="listItem">paaji</li>
+				<li class="listItem">sardarji</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+<script>
+$listClass = $('.listItem');
+$listClass.hide();
+$('ul.sagul li').each(function(){
+var currentEvent = $(this);
+var currentElement = currentEvent.find('ul li');
+var pastElement = currentEvent.siblings("li").find("ul li");
+currentEvent.click(function(){
+currentElement.show();
+pastElement.hide();
+});
+
+});
+
+</script>
+</html>
