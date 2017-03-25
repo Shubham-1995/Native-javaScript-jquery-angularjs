@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstra-datepicker.css">
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+    </head>
+    <body>
+date: <input type="text" class="datePicker" id='datePicker' value="2017/07/17" readonly>
+<button onclick="btn();">Click</button>
+<script>
+$('.datePicker').datepicker({format:'yyyy/mm/dd'});
+function txtClear(){
+$('.datePicker').val('');
+}
+function cancel(){
+$('.datePicker').datepicker('hide');
+$('.datePicker').val('');
+}
+function done(){
+$('.datePicker').datepicker('hide');
+}
+function btn(){
+var dateValue = $('#datePicker').val();
+alert(dateValue);
+}
+
+</script>
