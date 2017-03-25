@@ -7,7 +7,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
-	<ul class="sagul">
+	<ul class="main">
 		<li>fruit
 			<ul class="listValue">
 				<li class="listItem">apple</li>
@@ -31,7 +31,7 @@
 <script>
 $listClass = $('.listItem');
 $listClass.hide();
-$('ul.sagul li').each(function(){
+$('ul.main li').each(function(){
 var currentEvent = $(this);
 var currentElement = currentEvent.find('ul li');
 var pastElement = currentEvent.siblings("li").find("ul li");
