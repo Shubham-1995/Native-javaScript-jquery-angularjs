@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="student">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+<style>
+.ng-invalid.ng-dirty { border-color: #FA787E; } 
+.ng-valid.ng-dirty {  border-color: #78FA89; }
+</style>
+<div ng-controller ="StudentCtrl as stu">
+<ul class="list-group">
+<li ng-repeat = "stuObj in stu.getArr" class = "list-group-item">
+<p>{{stuObj.name}} <em class="pull-center">{{stuObj.surname}} </em> <em class="pull-right"><button class="btn btn-info btn-sm" ng-click="showForm();"> Add </button></em></p>
+
+</li>
+</ul>
+<br/> <br/>
+
+<form name="reviewForm" ng-show="stu.showField" class="form-inline" ng-submit = "reviewForm.$valid && submisson();">
+    <div class="form-group">
+      <label>First Name</label>
+        <input class="form-control" type="text" ng-model="stu.firstName" ng-change="enableText();" required>
+    </div>
+	<br/>
+	<div class="form-group">
+      <label>LastName</label>
+        <input class="form-control" type="text" ng-model="stu.lastName" ng-change="btnDisEna();" ng-disabled="stu.lastDisable"/ required>
+    </div>
+	<br/><br/>
+	<div> reviewForm is {{reviewForm.$valid}} </div>
+	<button type="submit" class="btn btn-default"  ng-disabled="stu.btnDisable">Submit</button>
+</form>
+<br/><br/>
+
+</div>
+
+<section ng-controller="PanelController as panel">
+<ul class="nav nav-pills">
+ <li ng-class = "{active:panel.tab == 1}"> <a href ng-click="selectTab(1);">Description</a> </li> 
+  <li ng-class = "{active:panel.tab == 2}"> <a href ng-click="selectTab(2);">Specification</a> </li> 
+   <li ng-class = "{active:panel.tab == 3}"> <a href ng-click="selectTab(3);">Review</a> </li> 
+</ul>
+<div class="panel" ng-show ="isSelected(1)">
+<h4>Description</h4>
+<p>{{panel.description}}</p>
+</div>
+
+<div class="panel" ng-show ="isSelected(2)">
+<h4>Specification</h4>
+<p>{{panel.specification}}</p>
+</div>
+
+<div class="panel" ng-show ="isSelected(3)">
+<h4> Review </h4>
+ <form name="reviewForm" ng-repeat="review in panel.reviewsArr">
+ <blockquote>
+   <b>Stars: {{review.stars}}</b>
+    {{review.body}} 
+	 <cite>by: {{review.author}}</cite> 
+ </blockquote>
+ 
+  <select ng-model="review.stars">
+  <option value="1">1 star</option>
+  <option value="2">2 star</option>
+  <option value="3">3 star</option>
+  <option value="4">4 star</option>
+  <option value="5">5 star</option>
+  </select>
+  <textarea ng-model="review.body"></textarea>
+  <label>by:</label>
+  <input type="email" ng-model="review.author"/>
+  <input type="submit" value="Submit"/>
+ </form>
+</div>
+</section>
+<script type="text/javascript" src="js/today1.js"></script>
+</body>
+</html>
