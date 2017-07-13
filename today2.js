@@ -3,10 +3,7 @@ var myApp = angular.module('myApp',[]);
 myApp.directive('panelController', function() {
     return {
         restrict: "EA",
-        link: function(scope, element, attrs){
-           // $rootScope.$broadcast("initialize");
-        },
-		templateUrl:"/hello-world.html",
+		templateUrl:"hello-world.html",
 		controller: function(){
 			this.name = "shubham";
 			this.surname = "gaur";
@@ -24,12 +21,9 @@ myApp.controller('MyCtrl',function($scope) {
 	$scope.lastname = "gaur";
 });
 
-myApp.directive('abc', function($rootScope) {
+myApp.directive('abc', function() {
     return {
         restrict: "EA",
-        link: function(scope, element, attrs){
-           $rootScope.$broadcast("initialize");
-        },
-		templateUrl:"/seenow.html",
+		templateUrl:"seenow.html",
     }
 });

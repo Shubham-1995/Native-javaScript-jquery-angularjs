@@ -1,0 +1,39 @@
+<section>
+<ul class="nav nav-pills">
+ <li ng-class = "{active:panel.tab == 1}"> <a href ng-click="selectTab(1);">Description</a> </li> 
+  <li ng-class = "{active:panel.tab == 2}"> <a href ng-click="selectTab(2);">Specification</a> </li> 
+   <li ng-class = "{active:panel.tab == 3}"> <a href ng-click="selectTab(3);">Review</a> </li> 
+</ul>
+<div class="panel" ng-show ="isSelected(1)">
+<h4>Description</h4>
+<p>{{panel.description}}</p>
+</div>
+
+<div class="panel" ng-show ="isSelected(2)">
+<h4>Specification</h4>
+<p>{{panel.specification}}</p>
+</div>
+
+<div class="panel" ng-show ="isSelected(3)">
+<h4> Review </h4>
+ <form name="reviewForm" ng-repeat="review in panel.reviewsArr">
+ <blockquote>
+   <b>Stars: {{review.stars}}</b>
+    {{review.body}} 
+	 <cite>by: {{review.author}}</cite> 
+ </blockquote>
+ 
+  <select ng-model="review.stars">
+  <option value="1">1 star</option>
+  <option value="2">2 star</option>
+  <option value="3">3 star</option>
+  <option value="4">4 star</option>
+  <option value="5">5 star</option>
+  </select>
+  <textarea ng-model="review.body"></textarea>
+  <label>by:</label>
+  <input type="email" ng-model="review.author"/>
+  <input type="submit" value="Submit"/>
+ </form>
+</div>
+</section>
