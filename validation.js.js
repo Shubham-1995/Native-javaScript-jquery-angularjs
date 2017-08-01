@@ -704,9 +704,6 @@ globalServiceLibrary.landlineNumberValidation = function(modelValue, id){
 });
 
 
-
-				
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -718,14 +715,14 @@ globalServiceLibrary.landlineNumberValidation = function(modelValue, id){
 <script>
 
 
-			    $("#txtDate").keyup(function(e){
-			 if( $("#txtDate").val().length <= 1){
+	$("#txtDate").keyup(function(e){
+			 if( $(this).val().length <= 1){
 				if($(this).val().substring(0,1) =='/'){
 					if(e.keyCode == 47 || e.keyCode == 191){
 						$(this).val($(this).val().substring(0,0));
 					}
 				}
-			}else if($(this).val().length <=4){
+			}else if($(this).val().length <4){
 			
 				if($(this).val().substring(1,2) =='/'){
 					if(e.keyCode == 47 || e.keyCode == 191){
@@ -737,8 +734,12 @@ globalServiceLibrary.landlineNumberValidation = function(modelValue, id){
 					}
 				}
 				
-			}else if($(this).val().length >4 && $(this).val().length<=7){
-				if($(this).val().substring(4,5) =='/'){
+			}else if($(this).val().length >=4 && $(this).val().length<=7){
+			if($(this).val().substring(3,4) =='/'){
+					if(e.keyCode == 47 || e.keyCode == 191){
+						$(this).val($(this).val().substring(0,4));
+					}
+				}else if($(this).val().substring(4,5) =='/'){
 					if(e.keyCode == 47 || e.keyCode == 191){
 						$(this).val($(this).val().substring(0,5));
 					}
@@ -750,7 +751,7 @@ globalServiceLibrary.landlineNumberValidation = function(modelValue, id){
 			}	
 
  
-});
+	});
 </script>
 </body>
 </html>
