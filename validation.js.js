@@ -716,28 +716,7 @@ globalServiceLibrary.landlineNumberValidation = function(modelValue, id){
 <body>
 <input type="text" id="txtDate" >
 <script>
-/*
 
- $("#txtDate").keypress(function(e){
-if(e.keyCode == 47){
-e.preventDefault();
-}
- });
- }*/
-
-            
- /*               
-				
-				if ( $(this).val().substring(1,2) =='/' || $(this).val().substring(2,3) =='/'){
-				 if(e.keyCode == 191){
-				 e.preventDefault();
-				 }
-				}else if($(this).val().substring(3,4) =='/' || $(this).val().substring(4,5) =='/'){
-				 if(e.keyCode == 191){
-				 e.preventDefault();
-				 }
-				}
-				*/
 
 			    $("#txtDate").keyup(function(e){
 			 if( $("#txtDate").val().length <= 1){
