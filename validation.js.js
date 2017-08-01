@@ -713,9 +713,7 @@ globalServiceLibrary.landlineNumberValidation = function(modelValue, id){
 <body>
 <input type="text" id="txtDate" >
 <script>
-
-
-	$("#txtDate").keyup(function(e){
+$("#txtDate").keyup(function(e){
 			 if( $(this).val().length <= 1){
 				if($(this).val().substring(0,1) =='/'){
 					if(e.keyCode == 47 || e.keyCode == 191){
@@ -737,7 +735,7 @@ globalServiceLibrary.landlineNumberValidation = function(modelValue, id){
 			}else if($(this).val().length >=4 && $(this).val().length<=7){
 			if($(this).val().substring(3,4) =='/'){
 					if(e.keyCode == 47 || e.keyCode == 191){
-						$(this).val($(this).val().substring(0,4));
+						$(this).val($(this).val().substring(0,3));
 					}
 				}else if($(this).val().substring(4,5) =='/'){
 					if(e.keyCode == 47 || e.keyCode == 191){
@@ -748,7 +746,11 @@ globalServiceLibrary.landlineNumberValidation = function(modelValue, id){
 						$(this).val($(this).val().substring(0,6));
 					}
 				}
-			}	
+			}else if($(this).val().length >= 10){
+				if(e.keyCode != 8){
+					$(this).val($(this).val().substring(0,10));
+				}
+			}		
 
  
 	});
