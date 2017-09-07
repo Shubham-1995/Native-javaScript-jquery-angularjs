@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="http://include.jaydata.org/jaydata.js"></script>
+    <script src="controller.js"></script>
+  </head>
+<body>
+<div ng-app>
+     <h1>Todo list - store items to local database</h1>
+    <div ng-controller="TodoCtrl">
+        <label>Task:</label>
+        <input ng-model="newTodo.task" />
+        <label>Completed:</label>
+        <input type="checkbox" ng-model="newTodo.done" />
+        <a href="#" ng-click="addNew(newTodo)">Add new</a>
+        <br />Search: <input ng-model="search" />
+        <ul>
+            <li ng-repeat="todo in todos">{{todo.Id}},{{todo.task}}, Completed:
+                <input type="checkbox" ng-model="todo.done" ng-click="todo.save()" /> 
+                <a href="#" ng-click="remove(todo)">Remove item</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</html>

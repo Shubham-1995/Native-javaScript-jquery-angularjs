@@ -1,0 +1,42 @@
+<ul>
+    <li><input type="checkbox" id="select_all"/> Selecct All</li>
+    <li><input class="checkbox" type="checkbox" value="helo1"> helo1</li>
+    <li><input class="checkbox" type="checkbox" value="helo2"> helo2</li>
+    <li><input class="checkbox" type="checkbox" value="helo3"> helo3</li>
+    <li><input class="checkbox" type="checkbox" value="helo4"> helo4</li>
+    <li><input class="checkbox" type="checkbox" value="helo5"> helo5</li>
+    <li><input class="checkbox" type="checkbox" value="helo6"> helo6</li>
+</ul>
+<button id="btn1">click</button>
+<script src="jquery-3.1.0.js"></script>
+<script>
+
+var values = [];
+$("#select_all").change(function(){  
+values= []
+    var status = this.checked;
+    $('.checkbox').each(function(){ 
+        this.checked = status; 
+		if($(this).is(':checked'))
+		 values.push($(this).val());
+    });
+	alert(values);	
+});
+
+$('.checkbox').change(function(){
+    if(this.checked == false){ 
+        $("#select_all")[0].checked = false; 
+    }
+if ($('.checkbox:checked').length == $('.checkbox').length ){ 
+        $("#select_all")[0].checked = true; 	
+    }
+values = [];
+$('.checkbox').each(function(){
+if($(this).is(':checked'))
+values.push($(this).val())
+});
+alert(values);
+
+})
+
+</script>

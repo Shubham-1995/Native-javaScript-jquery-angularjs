@@ -1,0 +1,25 @@
+<ol>
+    <li>committee: <input class="checkbox" type="checkbox" value="committee"> </li>
+    <li>directory: <input class="checkbox" type="checkbox" value="directory"> </li>
+    <li>featurelist: <input class="checkbox" type="checkbox" value="featurelist"> </li>
+    <li>aboutus: <input class="checkbox" type="checkbox" value="aboutus"> </li>
+    <li>contactus: <input class="checkbox" type="checkbox" value="contactus"> </li>
+    <li>forwardmessages: <input class="checkbox" type="checkbox" value="forwardmessages"> </li>
+	<li>forthcomming: <input class="checkbox" type="checkbox" value="forthcomming"> </li>
+    <li>gallery: <input class="checkbox" type="checkbox" value="gallery"> </li>
+    <li>newsletter: <input class="checkbox" type="checkbox" value="newsletter"> </li>
+    <li>document: <input class="checkbox" type="checkbox" value="document"> </li>
+	<li>webprofile:  <input class="checkbox" type="checkbox" value="webprofile"> </li>
+</ol>
+<button id="btn">click</button>
+<script src="jquery-3.1.0.js"></script>
+<script>
+var featureArray = {feature:[]};
+
+$("#btn").click(function(){
+$('.checkbox:checked').each(function() {
+featureArray.feature.push({"name":$(this).val()})
+})
+alert(JSON.stringify(featureArray));
+})
+</script>
